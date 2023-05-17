@@ -17,9 +17,16 @@ const eight = document.querySelector('.eight')
 const nine = document.querySelector('.nine')
 const zero = document.querySelector('.zero')
 const numberButtons = document.querySelectorAll('.digit')
-
+let operand1;
+let operand2;
+let operation;
+let result;
 clear.addEventListener("click", function clearNumbers() {
     display.innerHTML = "";
+    operand1 = "";
+    operand2 = "";
+    operation = "";
+    result = ""
 });
 cancel.addEventListener("click", function deleteDigit() {
     display.innerHTML = display.innerHTML.slice(0, -1);
@@ -28,6 +35,14 @@ cancel.addEventListener("click", function deleteDigit() {
 for (let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener("click", function inputNumber() {
         display.innerHTML = display.innerHTML.concat(`${numberButtons[i].innerHTML}`);
-        console.log(numberList[i])
     })
 }
+plus.addEventListener("click", function add() {
+    operand1 = Number(display.innerHTML);
+    operation = "+";
+    display.innerHTML = "";
+});
+equals.addEventListener("click", function evaluate() {
+    result = eval(`${operand1} + ${operation} + ${display.innerHTML}`);
+    display.innerHTML = result;
+});
