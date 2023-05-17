@@ -25,9 +25,6 @@ cancel.addEventListener("click", function deleteDigit() {
     display.innerHTML = display.innerHTML.slice(0, -1);
 
 })
-// eight.addEventListener("click", function inputEight() {
-//     display.innerHTML = display.innerHTML.concat("8");
-// })
 for (let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener("click", function inputNumber() {
         display.innerHTML = display.innerHTML.concat(`${numberButtons[i].innerHTML}`);
