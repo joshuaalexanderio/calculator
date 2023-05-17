@@ -37,11 +37,16 @@ for (let i = 0; i < numberButtons.length; i++) {
         display.innerHTML = display.innerHTML.concat(`${numberButtons[i].innerHTML}`);
     })
 }
+
+// TODO: change this listener function so that it highlights the operation and doesn't remove operand1 until you've started entering operand2
 plus.addEventListener("click", function add() {
     operand1 = Number(display.innerHTML);
     operation = "+";
     display.innerHTML = "";
+    
 });
+
+// TODO: change this listener function so that it does not rely on eval, which is a security vulnerability, as it allows the user to run arbitrary code
 equals.addEventListener("click", function evaluate() {
     result = eval(`${operand1} + ${operation} + ${display.innerHTML}`);
     display.innerHTML = result;
