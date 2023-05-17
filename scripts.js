@@ -1,6 +1,6 @@
 const display = document.querySelector('.display');
 const clear = document.querySelector('.clear')
-const cancel = document.querySelector('.delete')
+const cancel = document.querySelector('.cancel')
 const operator = document.querySelector('.divide')
 const multiply = document.querySelector('.multiply')
 const minus = document.querySelector('.minus')
@@ -17,8 +17,6 @@ const eight = document.querySelector('.eight')
 const nine = document.querySelector('.nine')
 const zero = document.querySelector('.zero')
 
-function clear {
-
-}
-clear.addEventListener("click", )
-
+clear.addEventListener("click", function clearNumbers() {
+    display.innerHTML = "";
+});
